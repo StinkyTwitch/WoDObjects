@@ -257,8 +257,13 @@ local WoDObjectsTalador = {
 local WoDObjectsSpiresOfArak = {
 	"Armory Cannon",
 	"Cannonball",
+	"Firebomb",
+	"Firebomb Plunger",
 	"Illusion Charm",
+	"Injured Crewman",
 	"Ragged Mask",
+	"Serviceable Gear",
+	"Spore-be-Gone Turret",
 	"Syth",
 	"Syth's Bookcase",	
 	"Weathered Wingblades",
