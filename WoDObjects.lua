@@ -255,11 +255,13 @@ local WoDObjectsTalador = {
 }
 
 local WoDObjectsSpiresOfArak = {
-	"Weathered Wingblades",
-	"Syth",
-	"Syth's Bookcase",
-	"Ragged Mask",
+	"Armory Cannon",
+	"Cannonball",
 	"Illusion Charm",
+	"Ragged Mask",
+	"Syth",
+	"Syth's Bookcase",	
+	"Weathered Wingblades",
 	-- Treasures
 	"Abandoned Mining Pick",
 	"An Old Key",
