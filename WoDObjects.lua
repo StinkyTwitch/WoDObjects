@@ -258,11 +258,13 @@ local WoDObjectsTalador = {
 local WoDObjectsSpiresOfArak = {
 	"Armory Cannon",
 	"Cannonball",
+	"Effigy of Terokk",
 	"Firebomb",
 	"Firebomb Plunger",
 	"Illusion Charm",
 	"Injured Crewman",
 	"Ishaal's Orb",
+	"Poison Barrel",
 	"Ragged Mask",
 	"Ravager Egg",
 	"Ravager Grub",
@@ -270,7 +272,8 @@ local WoDObjectsSpiresOfArak = {
 	"Skizzik",
 	"Spore-be-Gone Turret",
 	"Syth",
-	"Syth's Bookcase",	
+	"Syth's Bookcase",
+	"Vigilant Outcast",
 	"Weathered Wingblades",
 	-- Treasures
 	"Abandoned Mining Pick",
