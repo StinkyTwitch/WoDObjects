@@ -170,56 +170,58 @@ local WoDObjectsGorgrond = {
 }
 
 local WoDObjectsTalador = {
-	"Drafting Table",
-	"Khadgar's Portal",
-	"Slumbering Protector",
+	"Altar of Ango'rosh",
+	"Ancient Prism",
+	"Annals of Aruuna",
+	"Arcane Crystals",
+	"Arcane Nexus",
 	"Arcane Vortex",
-	"Sack of Supplies",
+	"Arkonite Crystal",
+	"Arkonite Pylon",
+	"Aruunem Berry Bush",
+	"Astral Ward",
+	"Auchenai Ballista",
+	"Auchenai Prayerbook",
+	"Auch'naaru",
+	"Barum's Note",
+	"Blackrock Bomb",
+	"Body Pile",
+	"Burning Resonator",
+	"Crystal-Shaper's Tools",
+	"Decommissioned Iron Shredder",
+	"Defiling Crystal",
+	"Demonic Gateway",
+	"Drafting Table",
+	"Forge",
 	"Garrison Records",
 	"Gazlowe's Eye 'n' Ear",
+	"Gordunni Boulderthrower",
+	"Harmonic Crystal",
+	"Hastily Written Note",
+	"Honed Crystal",
 	"Iron Horde Explosives",
-	"Iron Shredder Decommission Orders",
-	"Decommissioned Iron Shredder",
 	"Iron Horde Siege Engine",
+	"Iron Shredder Decommission Orders",
 	"Iron Shredder Prototype",
 	"Iron Star",
-	"Blackrock Bomb",
-	"Portal to Talador",
-	"Barum's Note",
-	"Harmonic Crystal",
-	"Polished Crystal",
-	"Honed Crystal",
-	"Annals of Aruuna",
-	"Melani's Doll",
-	"Crystal-Shaper's Tools",
-	"Panicked Young Prowler",
-	"Ancient Prism",
-	"The Art of Darkness",
-	"Aruunem Berry Bush",
-	"Gordunni Boulderthrower",
-	"Krelas' Portal",
-	"Astral Ward",
-	"Arcane Nexus",
-	"Arkonite Pylon",
-	"Arkonite Crystal",
-	"Burning Resonator",
 	"Karab'uun",
-	"Defiling Crystal",
-	"Zorka's Void Gate",
-	"Hastily Written Note",
-	"Forge",
-	"Telmor Registry",
-	"Body Pile",
-	"Auchenai Prayerbook",
+	"Khadgar's Portal",
+	"Krelas' Portal",
 	"Leafshadow",
-	"Auch'naaru",
-	"Altar of Ango'rosh",
-	"Shadow Council Communicator",
+	"Melani's Doll",
+	"Panicked Young Prowler",
+	"Polished Crystal",
+	"Portal to Talador",
 	"Roaring Fire",
+	"Sack of Supplies",
+	"Shadow Council Communicator",
 	"Shadow Orb",
-	"Demonic Gateway",
-	"Auchenai Ballista",
-	"Arcane Crystals",
+	"Sha'tari",
+	"Slumbering Protector",
+	"Telmor Registry",
+	"The Art of Darkness",
+	"Zorka's Void Gate",
+
 	-- Treasures
 	"Aarko's Family Treasure",
 	"Amethyl Crystal",
@@ -253,6 +255,11 @@ local WoDObjectsTalador = {
 }
 
 local WoDObjectsSpiresOfArak = {
+	"Weathered Wingblades",
+	"Syth",
+	"Syth's Bookcase",
+	"Ragged Mask",
+	"Illusion Charm",
 	-- Treasures
 	"Abandoned Mining Pick",
 	"An Old Key",
@@ -422,10 +429,10 @@ function WoDObjects.Interact()
 		--[[
 		Talador (ID: 7)
 		--]]
-		if GetCurrentMapZone() == 7 then
+		if GetCurrentMapZone() == 10 then
 			for i = 1, ObjectCount() do
 				local curObj = ObjectWithIndex(i)
-				if tContains(WoDObjectsTalador, ObjectName(curObj)) and WoDObjects.Distance(curObj) <= 4 then
+				if tContains(WoDObjectsTalador, ObjectName(curObj)) and WoDObjects.Distance(curObj) <= 6 then
 					C_Timer.After(0.1, function() ObjectInteract(curObj) end)
 					return
 				end
@@ -433,12 +440,12 @@ function WoDObjects.Interact()
 		end
 		
 		--[[
-		Spires of Arak (ID: 6)
+		Spires of Arak (ID: 8)
 		--]]
-		if GetCurrentMapZone() == 6 then
+		if GetCurrentMapZone() == 8 then
 			for i = 1, ObjectCount() do
 				local curObj = ObjectWithIndex(i)
-				if tContains(WoDObjectsSpiresOfArak, ObjectName(curObj)) and WoDObjects.Distance(curObj) <= 4 then
+				if tContains(WoDObjectsSpiresOfArak, ObjectName(curObj)) and WoDObjects.Distance(curObj) <= 8 then
 					C_Timer.After(0.1, function() ObjectInteract(curObj) end)
 					return
 				end
