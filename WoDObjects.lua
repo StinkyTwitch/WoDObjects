@@ -50,10 +50,12 @@ local WoDObjectsFrostfireRidge = {
 	"Command Table",
 	"Drudgeboat Salvage",
 	"Finalize Garrison Plot",
+	"Frost Wolf",
 	"Frost Wolf Howler##78894",
 	"Frost Wolf Howler",
 	"Frostwolf Axe",
 	"Frostwolf Collar",
+	"Frostwolf Crate",
 	"Frostwolf Gladiator",
 	"Frostwolf Grunt",
 	"Frostwolf Rylak",
@@ -70,12 +72,15 @@ local WoDObjectsFrostfireRidge = {
 	"Iron Horde Cannon",
 	"Ladder",
 	"Master Surveyor",
+	"Mulverick's Cage",
 	"Nerok",
 	"North Incubator Cage",
 	"Ogre Barricade",
 	"Ogre Spike",
 	"Olin Umberhide",
 	"Roknor",
+	"Shivertail's Father",
+	"Shivertail's Mother",
 	"Siege Munitions",
 	"South Incubator Cage",
 	"Thunderlord Supplies",
@@ -260,6 +265,7 @@ local WoDObjectsTalador = {
 local WoDObjectsSpiresOfArak = {
 	"Armory Cannon",
 	"Cannonball",
+	"Cursed Arakkoa",
 	"Effigy of Terokk",
 	"Firebomb",
 	"Firebomb Plunger",
@@ -320,17 +326,30 @@ local WoDObjectsNagrand = {
 	"Adventurer's Pouch",
 	"Adventurer's Sack",
 	"Adventurer's Staff",
+	"Ancient Snarlpaw Skull",
 	"Appropriated Warsong Supplies",
 	"Bag of Herbs",
 	"Bone-Carved Dagger",
+	"Bounty Board",
 	"Bounty of the Elements",
+	"Box of Ogre Research",
+	"Brazwix's Treasure",
 	"Brilliant Dreampetal",
+	"Burning Blade Locker",
+	"Burning Blade Sword",
+	"Ceremonial Pyre",
+	"Challe",
 	"Elemental Offering",
 	"Elemental Shackles",
+	"Ember Blossom",
+	"Fallen Horde Soldier",
 	"Fragment of Oshu'gun",
+	"Frightened Spirit",
 	"Freshwater Clam",
 	"Fungus-Covered Chest",
 	"Gambler's Purse",
+	"Garrison Blueprints",
+	"Gar'rok",
 	"Genedar Debris",
 	"Goblin Pack",
 	"Golden Kaliri Egg",
@@ -339,22 +358,41 @@ local WoDObjectsNagrand = {
 	"Hidden Stash",
 	"Highmaul Sledge",
 	"Important Exploration Supplies",
+	"Iron Horde War Machine",
+	"Lazy Peon",
 	"Lost Pendant",
+	"Mixed Unit Tactics",
 	"Mountain Climber's Pack",
+	"Nagrand Scouting Report",
+	"Nether Beacon",
 	"Ogre Beads",
+	"Ogre Scrolls",
 	"Pale Elixir",
+	"Pillar of Earth",
+	"Pillar of Flame",
+	"Pillar of Water",
+	"Pillar of Wind",
 	"Pokkar's Thirteenth Axe",
 	"Polished Saberon Skull",
+	"Ritual Totem",
+	"Sabermaw Cage",
 	"Saberon Stash",
 	"Smuggler's Cache",
 	"Spirit Coffer",
 	"Steamwheedle Supplies",
+	"Stolen Goods",
+	"Summoning Brazier",
 	"Telaar Defender Shield",
 	"Treasure of Kull'krosh",
 	"Void-Infused Crystal",
+	"Void Crystal",
+	"Void Portal",
+	"Warsong Attack Plans",
 	"Warsong Cache",
+	"Warsong Command Brief",
 	"Warsong Helm",
 	"Warsong Lockbox",
+	"Warsong Outrider Orders",
 	"Warsong Spear",
 	"Warsong Spoils",
 	"Warsong Supplies",
@@ -375,7 +413,7 @@ function WoDObjects.Interact()
 	   (GetCurrentMapContinent() == 1 and GetCurrentMapZone() == 20) then
 		for i = 1, ObjectCount() do
 			local curObj = ObjectWithIndex(i)
-			if ObjectName(curObj) == "Archmage Khadgar" and WoDObjects.Distance(curObj, nil) <= 4 then
+			if ObjectName(curObj) == "Archmage Khadgar" and WoDObjects.Distance(curObj, nil) <= 8 then
 				C_Timer.After(0.1, function() ObjectInteract(curObj) end)
 				return
 			end
@@ -390,7 +428,7 @@ function WoDObjects.Interact()
 		if GetCurrentMapZone() == 0 then
 			for i = 1, ObjectCount() do
 				local curObj = ObjectWithIndex(i)
-				if tContains(WoDObjectsTanaan, ObjectName(curObj)) and WoDObjects.Distance(curObj) <= 5 then
+				if tContains(WoDObjectsTanaan, ObjectName(curObj)) and WoDObjects.Distance(curObj) <= 8 then
 					--ObjectInteract(curObj)
 					C_Timer.After(0.1, function() ObjectInteract(curObj) end)
 					return
@@ -409,7 +447,7 @@ function WoDObjects.Interact()
 		if GetCurrentMapZone() == 0 then
 			for i = 1, ObjectCount() do
 				local curObj = ObjectWithIndex(i)
-				if tContains(WoDObjectsTanaan, ObjectName(curObj)) and WoDObjects.Distance(curObj) <= 5 then
+				if tContains(WoDObjectsTanaan, ObjectName(curObj)) and WoDObjects.Distance(curObj) <= 8 then
 					--ObjectInteract(curObj)
 					C_Timer.After(0.1, function() ObjectInteract(curObj) end)
 					return
@@ -423,7 +461,7 @@ function WoDObjects.Interact()
 		if GetCurrentMapZone() == 2 then
 			for i = 1, ObjectCount() do
 				local curObj = ObjectWithIndex(i)
-				if tContains(WoDObjectsFrostfireRidge, ObjectName(curObj)) and WoDObjects.Distance(curObj) <= 6 then
+				if tContains(WoDObjectsFrostfireRidge, ObjectName(curObj)) and WoDObjects.Distance(curObj) <= 8 then
 					C_Timer.After(0.1, function() ObjectInteract(curObj) end)
 					return
 				end
@@ -436,7 +474,7 @@ function WoDObjects.Interact()
 		if GetCurrentMapZone() == 4 then
 			for i = 1, ObjectCount() do
 				local curObj = ObjectWithIndex(i)
-				if tContains(WoDObjectsGorgrond, ObjectName(curObj)) and WoDObjects.Distance(curObj) <= 4 then
+				if tContains(WoDObjectsGorgrond, ObjectName(curObj)) and WoDObjects.Distance(curObj) <= 8 then
 					C_Timer.After(0.1, function() ObjectInteract(curObj) end)
 					return
 				end
@@ -449,7 +487,7 @@ function WoDObjects.Interact()
 		if GetCurrentMapZone() == 10 then
 			for i = 1, ObjectCount() do
 				local curObj = ObjectWithIndex(i)
-				if tContains(WoDObjectsTalador, ObjectName(curObj)) and WoDObjects.Distance(curObj) <= 6 then
+				if tContains(WoDObjectsTalador, ObjectName(curObj)) and WoDObjects.Distance(curObj) <= 8 then
 					C_Timer.After(0.1, function() ObjectInteract(curObj) end)
 					return
 				end
@@ -470,12 +508,12 @@ function WoDObjects.Interact()
 		end
 		
 		--[[
-		Nagrand (ID: 4)
+		Nagrand (ID: 6)
 		--]]
-		if GetCurrentMapZone() == 4 then
+		if GetCurrentMapZone() == 6 then
 			for i = 1, ObjectCount() do
 				local curObj = ObjectWithIndex(i)
-				if tContains(WoDObjectsNagrand, ObjectName(curObj)) and WoDObjects.Distance(curObj) <= 4 then
+				if tContains(WoDObjectsNagrand, ObjectName(curObj)) and WoDObjects.Distance(curObj) <= 8 then
 					C_Timer.After(0.1, function() ObjectInteract(curObj) end)
 					return
 				end
