@@ -49,6 +49,7 @@ local WoDObjectsFrostfireRidge = {
 	"Bounty of Bladespire",
 	"Command Table",
 	"Drudgeboat Salvage",
+	"Dungar Frostmane",
 	"Finalize Garrison Plot",
 	"Frost Wolf",
 	"Frost Wolf Howler##78894",
@@ -62,6 +63,7 @@ local WoDObjectsFrostfireRidge = {
 	"Frostwolf Shamanstone",
 	"Frostwolf Slave",
 	"Frostwolf Traveler's Pack",
+	"Frostwolf Warrior",
 	"Gana Surehide",
 	"Garrison Blueprint: Barracks",
 	"Garrison Cache",
@@ -71,7 +73,9 @@ local WoDObjectsFrostfireRidge = {
 	"Icevine",
 	"Iron Horde Cannon",
 	"Ladder",
+	"Makar Stonebinder",
 	"Master Surveyor",
+	"Matron Suma",
 	"Mulverick's Cage",
 	"Nerok",
 	"North Incubator Cage",
@@ -79,10 +83,12 @@ local WoDObjectsFrostfireRidge = {
 	"Ogre Spike",
 	"Olin Umberhide",
 	"Roknor",
+	"Rota Surehide",
 	"Shivertail's Father",
 	"Shivertail's Mother",
 	"Siege Munitions",
 	"South Incubator Cage",
+	"Thunderlord Ballista",
 	"Thunderlord Supplies",
 	"Thunderlord War Rylak",
 	"Tree Marking",
@@ -315,6 +321,9 @@ local WoDObjectsSpiresOfArak = {
 }
 
 local WoDObjectsNagrand = {
+	-- Quests
+	"Arkonite Crystal",
+	"Telaari Crystal",
 	-- Treasures
 	"A Pile of Dirt",
 	"Abandoned Cargo",
@@ -363,6 +372,7 @@ local WoDObjectsNagrand = {
 	"Lost Pendant",
 	"Mixed Unit Tactics",
 	"Mountain Climber's Pack",
+	"Nagrand Cherry",
 	"Nagrand Scouting Report",
 	"Nether Beacon",
 	"Ogre Beads",
