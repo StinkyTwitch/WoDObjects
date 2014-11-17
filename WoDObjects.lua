@@ -645,7 +645,7 @@ Check the toggle "/wodobj", if TRUE then run through the Interact index, else en
 --------------------------------------------------------------------------------------------------]]
 function WoDObjectsRun()
 	if WoDObjects.toggle then
-		if not UnitAffectingCombat( "player" ) or UnitCastingInfo( "player" ) == nil then
+		if not UnitAffectingCombat( "player" ) and UnitCastingInfo( "player" ) == nil then
 			C_Timer.After(0.2, function() WoDObjects.Interact() end)
 		end
 	end
