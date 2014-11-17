@@ -137,7 +137,12 @@ local WoDObjectsFrostfireRidge = {
 
 local WoDObjectsGarrison = {
 	-- Quests
-	
+	"Fireweed",
+	"Frostweed",
+	"Gorgrond Flytrap",
+	"Nagrand Arrowbloom",
+	"Starflower",
+	"Talador Orchid",
 	-- Treasures
 	"Lady Sena's Other Materials Stash",
 }
@@ -445,25 +450,8 @@ function WoDObjects.Interact()
 		for i = 1, ObjectCount() do
 			local curObj = ObjectWithIndex(i)
 			if ObjectName(curObj) == "Archmage Khadgar" and WoDObjects.Distance(curObj, nil) <= 8 then
-				C_Timer.After(0.1, function() ObjectInteract(curObj) end)
+				C_Timer.After(1, function() ObjectInteract(curObj) end)
 				return
-			end
-		end
-	end
-	
-	
-	if GetCurrentMapContinent() == -1 then
-		--[[
-		Tanaan (ID: 0)
-		--]]
-		if GetCurrentMapZone() == 0 then
-			for i = 1, ObjectCount() do
-				local curObj = ObjectWithIndex(i)
-				if tContains(WoDObjectsTanaan, ObjectName(curObj)) and WoDObjects.Distance(curObj) <= 8 then
-					--ObjectInteract(curObj)
-					C_Timer.After(0.1, function() ObjectInteract(curObj) end)
-					return
-				end    					
 			end
 		end
 	end
@@ -480,7 +468,7 @@ function WoDObjects.Interact()
 				local curObj = ObjectWithIndex(i)
 				if tContains(WoDObjectsTanaan, ObjectName(curObj)) and WoDObjects.Distance(curObj) <= 8 then
 					--ObjectInteract(curObj)
-					C_Timer.After(0.1, function() ObjectInteract(curObj) end)
+					C_Timer.After(1, function() ObjectInteract(curObj) end)
 					return
 				end    					
 			end
@@ -494,7 +482,7 @@ function WoDObjects.Interact()
 				local curObj = ObjectWithIndex(i)
 				if tContains(WoDObjectsAshran, ObjectName(curObj)) and WoDObjects.Distance(curObj) <= 8 then
 					--ObjectInteract(curObj)
-					C_Timer.After(0.1, function() ObjectInteract(curObj) end)
+					C_Timer.After(1, function() ObjectInteract(curObj) end)
 					return
 				end    					
 			end
@@ -507,7 +495,7 @@ function WoDObjects.Interact()
 			for i = 1, ObjectCount() do
 				local curObj = ObjectWithIndex(i)
 				if tContains(WoDObjectsFrostfireRidge, ObjectName(curObj)) and WoDObjects.Distance(curObj) <= 8 then
-					C_Timer.After(0.1, function() ObjectInteract(curObj) end)
+					C_Timer.After(1, function() ObjectInteract(curObj) end)
 					return
 				end
 			end
@@ -519,9 +507,10 @@ function WoDObjects.Interact()
 		if GetCurrentMapZone() == 3 then
 			for i = 1, ObjectCount() do
 				local curObj = ObjectWithIndex(i)
-				if tContains(WoDObjectsGarrison, ObjectName(curObj)) and WoDObjects.Distance(curObj) <= 8 then
-					C_Timer.After(0.1, function() ObjectInteract(curObj) end)
-					return
+				if tContains(WoDObjectsGarrison, ObjectName(curObj)) and WoDObjects.Distance(curObj) <= 3 then
+						C_Timer.After(1, function() ObjectInteract(curObj) end)
+						return
+					end
 				end
 			end
 		end
@@ -533,7 +522,7 @@ function WoDObjects.Interact()
 			for i = 1, ObjectCount() do
 				local curObj = ObjectWithIndex(i)
 				if tContains(WoDObjectsGorgrond, ObjectName(curObj)) and WoDObjects.Distance(curObj) <= 8 then
-					C_Timer.After(0.1, function() ObjectInteract(curObj) end)
+					C_Timer.After(1, function() ObjectInteract(curObj) end)
 					return
 				end
 			end	
@@ -546,7 +535,7 @@ function WoDObjects.Interact()
 			for i = 1, ObjectCount() do
 				local curObj = ObjectWithIndex(i)
 				if tContains(WoDObjectsTalador, ObjectName(curObj)) and WoDObjects.Distance(curObj) <= 8 then
-					C_Timer.After(0.1, function() ObjectInteract(curObj) end)
+					C_Timer.After(1, function() ObjectInteract(curObj) end)
 					return
 				end
 			end
@@ -559,7 +548,7 @@ function WoDObjects.Interact()
 			for i = 1, ObjectCount() do
 				local curObj = ObjectWithIndex(i)
 				if tContains(WoDObjectsSpiresOfArak, ObjectName(curObj)) and WoDObjects.Distance(curObj) <= 8 then
-					C_Timer.After(0.1, function() ObjectInteract(curObj) end)
+					C_Timer.After(1, function() ObjectInteract(curObj) end)
 					return
 				end
 			end
@@ -572,7 +561,7 @@ function WoDObjects.Interact()
 			for i = 1, ObjectCount() do
 				local curObj = ObjectWithIndex(i)
 				if tContains(WoDObjectsNagrand, ObjectName(curObj)) and WoDObjects.Distance(curObj) <= 8 then
-					C_Timer.After(0.1, function() ObjectInteract(curObj) end)
+					C_Timer.After(1, function() ObjectInteract(curObj) end)
 					return
 				end
 			end
@@ -656,8 +645,8 @@ Check the toggle "/wodobj", if TRUE then run through the Interact index, else en
 --------------------------------------------------------------------------------------------------]]
 function WoDObjectsRun()
 	if WoDObjects.toggle then
-		if not UnitAffectingCombat( "player" ) then
-			C_Timer.After(1, function() WoDObjects.Interact() end)
+		if not UnitAffectingCombat( "player" ) or UnitCastingInfo( "player" ) == nil then
+			C_Timer.After(0.2, function() WoDObjects.Interact() end)
 		end
 	end
 end
