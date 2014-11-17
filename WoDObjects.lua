@@ -349,6 +349,7 @@ local WoDObjectsNagrand = {
 	-- Treasures
 	"A Pile of Dirt",
 	"Abandoned Cargo",
+	"Abandoned Chest",
 	"Abandoned Fishing Rod",
 	"Abu'Gar's Favorite Lure",
 	"Abu'gar's Missing Reel",
@@ -508,9 +509,8 @@ function WoDObjects.Interact()
 			for i = 1, ObjectCount() do
 				local curObj = ObjectWithIndex(i)
 				if tContains(WoDObjectsGarrison, ObjectName(curObj)) and WoDObjects.Distance(curObj) <= 3 then
-						C_Timer.After(1, function() ObjectInteract(curObj) end)
-						return
-					end
+					C_Timer.After(1, function() ObjectInteract(curObj) end)
+					return
 				end
 			end
 		end
