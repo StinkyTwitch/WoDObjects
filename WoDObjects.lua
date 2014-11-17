@@ -41,11 +41,18 @@ local WoDObjectsTanaan = {
 	"Main Cannon Trigger",
 }
 
+local WoDObjectsAshran = {
+	-- Quests
+	"Slippery Slime",
+	-- Treasures
+}
+
 local WoDObjectsFrostfireRidge = {
 	"Architect Table",
 	"Ball and Chain",
 	"Barbed Thunderlord Spear",
 	"Barrel of Frostwolf Oil",
+	"Blackrock Blasting Powder",
 	"Bounty of Bladespire",
 	"Command Table",
 	"Drudgeboat Salvage",
@@ -72,12 +79,13 @@ local WoDObjectsFrostfireRidge = {
 	"Horde Banner",
 	"Icevine",
 	"Iron Horde Cannon",
+	"Iron Horde Supplies",
 	"Ladder",
 	"Makar Stonebinder",
 	"Master Surveyor",
 	"Matron Suma",
 	"Mulverick's Cage",
-	"Nerok",
+	--"Nerok",
 	"North Incubator Cage",
 	"Ogre Barricade",
 	"Ogre Spike",
@@ -96,6 +104,7 @@ local WoDObjectsFrostfireRidge = {
 	"Wor'gol Villager",
 
 	-- Treasures
+	"Dusty Chest",
 	"Lucky Coin",
 	"Snow-Covered Strongbox",
 	"Gnawed Bone",
@@ -124,6 +133,13 @@ local WoDObjectsFrostfireRidge = {
 	"Lagoon Pool",
 	"Obsidian Petroglyph",
 	"Young Orc Woman",
+}
+
+local WoDObjectsGarrison = {
+	-- Quests
+	
+	-- Treasures
+	"Lady Sena's Other Materials Stash",
 }
 
 local WoDObjectsGorgrond = {
@@ -323,10 +339,12 @@ local WoDObjectsSpiresOfArak = {
 local WoDObjectsNagrand = {
 	-- Quests
 	"Arkonite Crystal",
+	"Iron Supply Crate",
 	"Telaari Crystal",
 	-- Treasures
 	"A Pile of Dirt",
 	"Abandoned Cargo",
+	"Abandoned Fishing Rod",
 	"Abu'Gar's Favorite Lure",
 	"Abu'gar's Missing Reel",
 	"Abu'gar's Vitality",
@@ -344,6 +362,7 @@ local WoDObjectsNagrand = {
 	"Box of Ogre Research",
 	"Brazwix's Treasure",
 	"Brilliant Dreampetal",
+	"Buried Timewarped Staff",
 	"Burning Blade Locker",
 	"Burning Blade Sword",
 	"Ceremonial Pyre",
@@ -384,7 +403,9 @@ local WoDObjectsNagrand = {
 	"Pillar of Wind",
 	"Pokkar's Thirteenth Axe",
 	"Polished Saberon Skull",
+	"Pristine Lily",
 	"Ritual Totem",
+	"Rusty Keys",
 	"Sabermaw Cage",
 	"Saberon Stash",
 	"Smuggler's Cache",
@@ -466,12 +487,39 @@ function WoDObjects.Interact()
 		end
 		
 		--[[
+		Ashran (ID: 1)
+		--]]
+		if GetCurrentMapZone() == 1 then
+			for i = 1, ObjectCount() do
+				local curObj = ObjectWithIndex(i)
+				if tContains(WoDObjectsAshran, ObjectName(curObj)) and WoDObjects.Distance(curObj) <= 8 then
+					--ObjectInteract(curObj)
+					C_Timer.After(0.1, function() ObjectInteract(curObj) end)
+					return
+				end    					
+			end
+		end
+		
+		--[[
 		Frostfire Ridge (ID: 2)
 		--]]
 		if GetCurrentMapZone() == 2 then
 			for i = 1, ObjectCount() do
 				local curObj = ObjectWithIndex(i)
 				if tContains(WoDObjectsFrostfireRidge, ObjectName(curObj)) and WoDObjects.Distance(curObj) <= 8 then
+					C_Timer.After(0.1, function() ObjectInteract(curObj) end)
+					return
+				end
+			end
+		end
+		
+		--[[
+		Garrison (ID: 3)
+		--]]
+		if GetCurrentMapZone() == 3 then
+			for i = 1, ObjectCount() do
+				local curObj = ObjectWithIndex(i)
+				if tContains(WoDObjectsGarrison, ObjectName(curObj)) and WoDObjects.Distance(curObj) <= 8 then
 					C_Timer.After(0.1, function() ObjectInteract(curObj) end)
 					return
 				end
