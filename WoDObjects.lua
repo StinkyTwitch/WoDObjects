@@ -165,6 +165,7 @@ local WoDObjectsGarrison = {
 
 local WoDObjectsGorgrond = {
 	-- Quests
+	"Ancient Ogre Hoard Jar",
 	"Ancient Seedbearer",
 	"Bluff Rylak",
 	"Chag the Noseless",
@@ -193,6 +194,8 @@ local WoDObjectsGorgrond = {
 	"Weaponization Orders",
 	"Will of the Genesaur",
 	-- Treasures
+	"Aged Stone Container",
+	"Ancient Titan Chest",
 	"Brokor's Sack",
 	"Discarded Pack",
 	"Evermorn Supply Cache",
@@ -203,6 +206,7 @@ local WoDObjectsGorgrond = {
 	"Iron Supply Chest",
 	"Laughing Skull Cache",
 	"Ockbar's Pack",
+	"Odd Boulder",
 	"Odd Skull",
 	"Petrified Rylak Egg",
 	"Pile of Rubble",
@@ -450,6 +454,7 @@ local WoDObjectsNagrand = {
 	"Saberon Stash",
 	"Smuggler's Cache",
 	"Spirit Coffer",
+	"Spirit's Gift",
 	"Steamwheedle Supplies",
 	"Stolen Goods",
 	"Summoning Brazier",
