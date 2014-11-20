@@ -153,6 +153,7 @@ local WoDObjectsFrostfireRidge = {
 
 local WoDObjectsGarrison = {
 	-- Quests
+	"Crate of Surplus Material",
 	"Fireweed",
 	"Frostweed",
 	"Gorgrond Flytrap",
@@ -344,6 +345,7 @@ local WoDObjectsSpiresOfArak = {
 	"Campaign Contributions",
 	"Coinbender's Payment",
 	"Elixir of Shadow Sight",
+	"Ephial's Dark Grimoire",
 	"Fractured Sunstone",
 	"Garrison Supplies",
 	"Garrison Workman's Hammer",
