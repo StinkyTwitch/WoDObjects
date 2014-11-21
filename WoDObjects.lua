@@ -372,6 +372,18 @@ local WoDObjectsSpiresOfArak = {
 	"Waterlogged Satchel",
 }
 
+local WoDObjectsShadowmoon = {
+	-- Quests
+	
+	-- Treasures
+	"Demonic Cache",
+	"Fantastic Fish",
+	"Iron Horde Cargo Shipment",
+	"Peaceful Offering",
+	"Stolen Treasure",
+	"Sunken Treasure",
+}
+
 local WoDObjectsNagrand = {
 	-- Quests
 	"Ancient Reliquary",
@@ -570,12 +582,25 @@ function WoDObjects.Interact()
 		end
 		
 		--[[
-		Talador (ID: 7)
+		Nagrand (ID: 6)
 		--]]
-		if GetCurrentMapZone() == 10 then
+		if GetCurrentMapZone() == 6 then
 			for i = 1, ObjectCount() do
 				local curObj = ObjectWithIndex(i)
-				if tContains(WoDObjectsTalador, ObjectName(curObj)) and WoDObjects.Distance(curObj) <= 8 then
+				if tContains(WoDObjectsNagrand, ObjectName(curObj)) and WoDObjects.Distance(curObj) <= 8 then
+					C_Timer.After(1, function() ObjectInteract(curObj) end)
+					return
+				end
+			end
+		end
+		
+		--[[
+		Shadowmoon Valley (ID: 7)
+		--]]
+		if GetCurrentMapZone() == 7 then
+			for i = 1, ObjectCount() do
+				local curObj = ObjectWithIndex(i)
+				if tContains(WoDObjectsShadowmoon, ObjectName(curObj)) and WoDObjects.Distance(curObj) <= 8 then
 					C_Timer.After(1, function() ObjectInteract(curObj) end)
 					return
 				end
@@ -596,12 +621,12 @@ function WoDObjects.Interact()
 		end
 		
 		--[[
-		Nagrand (ID: 6)
+		Talador (ID: 10)
 		--]]
-		if GetCurrentMapZone() == 6 then
+		if GetCurrentMapZone() == 10 then
 			for i = 1, ObjectCount() do
 				local curObj = ObjectWithIndex(i)
-				if tContains(WoDObjectsNagrand, ObjectName(curObj)) and WoDObjects.Distance(curObj) <= 8 then
+				if tContains(WoDObjectsTalador, ObjectName(curObj)) and WoDObjects.Distance(curObj) <= 8 then
 					C_Timer.After(1, function() ObjectInteract(curObj) end)
 					return
 				end
